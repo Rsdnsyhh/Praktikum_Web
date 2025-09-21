@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom properties untuk warna dan font */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --tertiary-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --text-color: #34495e;
+    --font-heading: 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Arial', sans-serif;
+}
+
+/* Base styles & typography */
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2em;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Header & navigation (menggunakan Flexbox) */
+.header {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.logo {
+  /* Mengatur warna teks */
+  color: #fff; 
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.tagline {
+    margin: 10px 0 20px;
+    font-style: italic;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Menggunakan Flexbox untuk perataan */
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--light-color);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+}
+
+.services-grid {
+    display: grid; /* Menggunakan grid layout untuk tata letak kolom */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.how-list {
+    list-style: none;
+    padding: 0;
+}
+
+.how-item {
+    background-color: #fff;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    /* Gaya untuk layar tablet dan mobile */
+    .nav-list {
+        flex-direction: column; /* Mengubah arah Flexbox jadi vertikal */
+        gap: 10px;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Gaya khusus untuk layar mobile */
+    .logo {
+        font-size: 2em;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Mengubah tata letak jadi satu kolom */
+    }
+}
