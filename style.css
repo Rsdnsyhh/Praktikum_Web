@@ -107,6 +107,8 @@ h1, h2, h3 {
     padding: 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    /* Tambahan style untuk visual feedback saat diklik */
+    cursor: pointer; 
 }
 
 .card:hover {
