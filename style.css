@@ -13,6 +13,13 @@
     --text-color: #34495e;
     --font-heading: 'Helvetica Neue', Arial, sans-serif;
     --font-body: 'Arial', sans-serif;
+
+    /* DARK MODE CUSTOM PROPERTIES */
+    --dm-primary-color: #1a242f; /* Lebih gelap dari primary */
+    --dm-secondary-color: #5d9e5d; /* Warna Aksen Baru (hijau) */
+    --dm-light-color: #2c3e50; /* Background gelap */
+    --dm-text-color: #ecf0f1; /* Teks terang */
+    --dm-card-bg: #34495e; /* Background card gelap */
 }
 
 /* Base styles & typography */
@@ -21,7 +28,45 @@ body {
     line-height: 1.6;
     background-color: var(--light-color);
     color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk dark mode */
 }
+
+/* --- Dark Mode Styles --- */
+.dark-mode {
+    background-color: var(--dm-light-color);
+    color: var(--dm-text-color);
+}
+
+.dark-mode .header {
+    background-color: var(--dm-primary-color);
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+    color: var(--dm-text-color);
+}
+
+.dark-mode .section-title {
+    border-bottom-color: var(--dm-secondary-color);
+}
+
+.dark-mode .card, .dark-mode .how-item {
+    background-color: var(--dm-card-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .card-title {
+    color: var(--dm-secondary-color);
+}
+
+.dark-mode .how-item {
+    border-left-color: var(--dm-secondary-color);
+}
+
+.dark-mode .footer {
+    background-color: var(--dm-primary-color);
+}
+/* --- End Dark Mode Styles --- */
+
 
 .container {
     max-width: 1000px;
@@ -53,6 +98,7 @@ h1, h2, h3 {
     color: var(--light-color);
     padding: 40px 0;
     text-align: center;
+    position: relative; /* Diperlukan untuk penempatan tombol */
 }
 
 .logo {
@@ -145,6 +191,27 @@ h1, h2, h3 {
     margin-top: 40px;
 }
 
+/* Style untuk Tombol Dark Mode */
+.dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #2980b9;
+}
+
+
 /* Media Queries untuk Responsivitas */
 @media (max-width: 768px) {
     /* Gaya untuk layar tablet dan mobile */
@@ -155,6 +222,16 @@ h1, h2, h3 {
 
     .section-title {
         font-size: 1.8em;
+    }
+
+    .dark-mode-toggle {
+        top: 10px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .header {
+        padding-top: 60px; /* Tambahan padding untuk tombol */
     }
 }
 
