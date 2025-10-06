@@ -98,7 +98,7 @@ h1, h2, h3 {
     color: var(--light-color);
     padding: 40px 0;
     text-align: center;
-    position: relative; /* Diperlukan untuk penempatan tombol */
+    position: relative; /* Diperlukan untuk penempatan elemen absolut */
 }
 
 .logo {
@@ -137,6 +137,42 @@ h1, h2, h3 {
 .nav-link:hover {
     background-color: var(--secondary-color);
     color: var(--light-color);
+}
+
+/* Style untuk wrapper login dan tombol mode */
+.header-controls {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Meratakan item ke kanan */
+    z-index: 10;
+}
+
+/* [MODIFIKASI] Style untuk link login & tombol dark mode agar seragam */
+.login-link-header, .dark-mode-toggle {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Menghilangkan garis bawah dari link */
+    font-size: 0.9em; /* Menyamakan ukuran font */
+    display: inline-block; /* Agar padding bisa diterapkan dengan benar */
+}
+
+/* [BARU] Menambahkan margin bawah khusus untuk link login */
+.login-link-header {
+    margin-bottom: 8px;
+}
+
+/* [MODIFIKASI] Efek hover yang sama untuk kedua elemen */
+.login-link-header:hover, .dark-mode-toggle:hover {
+    background-color: #a06020; /* Warna hover digelapkan sedikit */
 }
 
 .services-grid {
@@ -191,27 +227,6 @@ h1, h2, h3 {
     margin-top: 40px;
 }
 
-/* Style untuk Tombol Dark Mode */
-.dark-mode-toggle {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    z-index: 10;
-}
-
-.dark-mode-toggle:hover {
-    background-color: #2980b9;
-}
-
-
 /* Media Queries untuk Responsivitas */
 @media (max-width: 768px) {
     /* Gaya untuk layar tablet dan mobile */
@@ -224,14 +239,16 @@ h1, h2, h3 {
         font-size: 1.8em;
     }
 
-    .dark-mode-toggle {
+    /* Menyesuaikan posisi wrapper di layar kecil */
+    .header-controls {
         top: 10px;
         right: 50%;
         transform: translateX(50%);
+        align-items: center; /* Menengahkan item */
     }
 
     .header {
-        padding-top: 60px; /* Tambahan padding untuk tombol */
+        padding-top: 80px; /* Tambahan padding agar tidak tertimpa */
     }
 }
 

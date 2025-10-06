@@ -12,7 +12,11 @@ session_start();
 <body>
   <header class="header">
     <div class="container header-container">
-      <button class="dark-mode-toggle" id="darkModeToggle">Toggle Dark Mode</button>
+      
+      <div class="header-controls">
+        <a href="login.php" class="login-link-header"><b>Login</b></a>
+        <button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
+      </div>
       
       <h1 class="logo">Sistem Sewa Alat Outdoor & Camping</h1>
       <p class="tagline">Solusi mudah untuk menyewa perlengkapan outdoor dan camping. Mulai petualanganmu sekarang!</p>
@@ -22,8 +26,7 @@ session_start();
           <li class="nav-item"><a href="#services" class="nav-link">Layanan</a></li>
           <li class="nav-item"><a href="#how" class="nav-link">Cara Sewa</a></li>
           <li class="nav-item"><a href="#contact" class="nav-link">Kontak</a></li>
-          <li class="nav-item"><a href="login.php" class="nav-link"><b>Login</b></a></li>
-        </ul>
+          </ul>
       </nav>
     </div>
   </header>
